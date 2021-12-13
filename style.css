@@ -11,14 +11,26 @@ div{
     justify-content: center;
 }
 
-.bar, .btn{
-    left: 50px;
-    align-items: center;
-    justify-content: center;
-    flex-direction: row;
-    align-content: center;
+form{
+    width: 60%;
+    margin: auto;
+}
+
+
+
+.inputStuff{
+    margin: 20px 0px 30px 0px;
+}
+
+.btn{
+    margin: 0px 70px;
+}
+
+.bar{
+    margin: 0px 70px;
 }
 
 .guessImg{
-    max-width: 50%;
+    max-width: 60%;
+    margin: 50px 0px;
 }
