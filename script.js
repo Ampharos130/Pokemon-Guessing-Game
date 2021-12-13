@@ -8,21 +8,24 @@
 
 
 //variables
-
+const $URL =`https://pokeapi.co/api/v2/pokemon/{id or name}/`
 
 
 //element references
-
+const $input = $(`form`);
+const $form = $(`input[type="text"]`);
 
 
 // event listeners
-
+$form.on(`submit`, handleGetData);
 
 
 
 //functions
 
-
+function handleGetData(evt) {
+   
+}
 
 
 
