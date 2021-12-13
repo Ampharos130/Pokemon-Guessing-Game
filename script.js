@@ -8,7 +8,7 @@
 
 
 //variables
-const $URL =`https://pokeapi.co/api/v2/pokemon/{id or name}/`
+const $URL =`https://pokeapi.co/api/v2/pokemon/`
 
 
 //element references
@@ -24,8 +24,24 @@ $form.on(`submit`, handleGetData);
 //functions
 
 function handleGetData(evt) {
-   
+   const userInput = $input.val();
+   if (!userInput) return;
+
+   $input.val(``);
+
+   $.ajax(URL + userInput).then(
+       function (data){
+           render(data);
+       },
+       function (error) {
+           console.log(`something went wrong`);
+           console.log(error);
+       }
+   );
 }
 
+function render(pokemonName){
+
+}
 
 
