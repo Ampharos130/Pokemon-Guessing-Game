@@ -26,6 +26,7 @@ startup();
 // load the data
 
 function startup(){
+    
     $.ajax(url).then(
         function (data){
          //    render(data);
@@ -37,6 +38,7 @@ function startup(){
              totalPokemon.push(temp)
          })
          console.log(totalPokemon)
+         rngPokemon();
         },
         function (error) {
             console.log(`something went wrong`);
@@ -64,6 +66,14 @@ function handleGetData(evt) {
    );
 }
 
-
-
 // choose a random pokemon
+function rngPokemon(){
+    return Math.floor(Math.random() * (totalPokemon.length - 0 + 1)) + 0;
+}
+
+
+// access the rng'd pokemons specific info
+
+// choose the url
+// choose the "official-artwork"
+
