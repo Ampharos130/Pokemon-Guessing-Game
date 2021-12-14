@@ -2,78 +2,50 @@
 
 //create a variable 
 //request api from pokemon site
+// make a function to request data from the api
 // make a submit and input
 // randomly generate one of the pokemon ID's
 // type the correct pokemon's name to win
 
+/*
+pull the whole pokemon list
+to choose a pokemon
+then pull that pokemons data
+then pokemon img and name to be pulled 
+then I want to display the name and img
+then I want the have a input with a true or false 
+checks name and input whatever I typed to be equal to pokemon name
+then I want computer to tell me I got name correct and its equal to name I type
+*/
 
 //variables
-const url =`https://pokeapi.co/api/v2/pokemon?limit=151`;
-let totalPokemon = [];
-
+let mainLink = `https://pokeapi.co/api/v2/pokemon?limit=151`
+let totalPk
 
 //element references
-const $button = $(`button`);
-const $input = $(`input[type="text"]`);
+$.ajax(mainLink).then(function (data){
+    console.log(data)
+     totalPk = data
+});
 
 
 // event listeners
-$button.on(`click`, handleGetData);
-startup();
+
+
 
 
 //functions
-// load the data
+function generateIndex(){
+ 
+    return Math.floor(Math.random() * ( totalPk.results.length - 0 + 1)) + 0;
+}
 
-function startup(){
+ function choosePokemon(){
+    console.log(totalPk.results [generateIndex()])// select the index to get access for the pokemon
+    $.ajax(totalPk.results[generateIndex()]).then(function (detailedData){
+        console.log(detailedData)
+    });
     
-    $.ajax(url).then(
-        function (data){
-         //    render(data);
-         data.results.forEach(element =>{
-             let temp = [];
-             
-             temp.push(element.name);
-             temp.push(element.url);
-             totalPokemon.push(temp)
-         })
-         console.log(totalPokemon)
-         rngPokemon();
-        },
-        function (error) {
-            console.log(`something went wrong`);
-            console.log(error);
-        }
-    );
-}
+ }
 
-function handleGetData(evt) {
-    evt.preventDefault()
-   const userInput = $input.val();
-//    if (!userInput) return;
-
-   $input.val(``);
-
-   $.ajax(url + userInput).then(
-       function (data){
-        //    render(data);
-        console.log(data)
-       },
-       function (error) {
-           console.log(`something went wrong`);
-           console.log(error);
-       }
-   );
-}
-
-// choose a random pokemon
-function rngPokemon(){
-    return Math.floor(Math.random() * (totalPokemon.length - 0 + 1)) + 0;
-}
-
-
-// access the rng'd pokemons specific info
-
-// choose the url
-// choose the "official-artwork"
-
+ 
