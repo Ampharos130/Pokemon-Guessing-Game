@@ -21,31 +21,45 @@ then I want computer to tell me I got name correct and its equal to name I type
 //variables
 let mainLink = `https://pokeapi.co/api/v2/pokemon?limit=151`
 let totalPk
-
+let exData 
 //element references
-$.ajax(mainLink).then(function (data){
-    console.log(data)
-     totalPk = data
-});
 
 
 // event listeners
-
+loadFirst();
 
 
 
 //functions
+
+function loadFirst(){
+$.ajax(mainLink).then(function (data){
+    console.log(data)
+     totalPk = data
+     choosePokemon();
+});
+}
+
+
+
 function generateIndex(){
  
     return Math.floor(Math.random() * ( totalPk.results.length - 0 + 1)) + 0;
 }
 
  function choosePokemon(){
-    console.log(totalPk.results [generateIndex()])// select the index to get access for the pokemon
+    // select the index to get access for the pokemon
     $.ajax(totalPk.results[generateIndex()]).then(function (detailedData){
         console.log(detailedData)
+        exData = detailedData
     });
-    
+
+ }
+ 
+ function render (pokeData){
+    console.log(pokeData)
+    $(`div`).html(`<img src = "${exData.sprites.other["official-artwork"].front_default}">`)
  }
 
- 
+//  official-artwork
+//  name
