@@ -16,6 +16,7 @@ then I want to display the name and img
 then I want the have a input with a true or false 
 checks name and input whatever I typed to be equal to pokemon name
 then I want computer to tell me I got name correct and its equal to name I type
+
 */
 
 //variables
@@ -23,7 +24,9 @@ let mainLink = `https://pokeapi.co/api/v2/pokemon?limit=151`
 let totalPk
 let exData 
 //element references
-
+let $button = $(`button`);
+let $input = $(`input`);
+let $img = $(`.guessImg`);
 
 // event listeners
 loadFirst();
@@ -60,6 +63,24 @@ function generateIndex(){
     console.log(pokeData)
     $(`div`).html(`<img src = "${exData.sprites.other["official-artwork"].front_default}">`)
  }
+
+ $button.on(`click`, function compare(evt){
+     evt.preventDefault();
+     
+     if($input.val() == exData.name){
+        console.log (`true`)
+        alert(`You got it!`)
+    }
+    else{ ($input.val() != exData.name) 
+        alert(`Nah, try again homie`)
+         console.log(`false`)
+     }
+ })
+
+ $img.on(`click`, function startGame(){
+     render()
+ })
+
 
 //  official-artwork
 //  name

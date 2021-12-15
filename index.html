@@ -7,17 +7,20 @@
     <link rel="stylesheet" href="style.css" />
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script defer src="/script.js"></script>
+    <link href="http://fonts.cdnfonts.com/css/pokemon-solid" rel="stylesheet">
+    <link href="http://fonts.cdnfonts.com/css/pokemon-solid" rel="stylesheet">
     <title>Pokemon</title>
   </head>
   <body>
     <h1>Guess that Pokemon!</h1>
     <div class ="imgContainer">
+      <p> click the image to reveal the pokemon!</p>
         <img class = "guessImg" src="https://i0.wp.com/www.alphr.com/wp-content/uploads/2016/07/whos_that_pokemon.png?fit=1920%2C1080&ssl=1" alt="pokemon ? img">
     </div>
     <form>
       <label>
       </label>
-        <input class="bar" type="text" placeholder="Put your guess in here" />
+        <input id ="bar" type="text" placeholder="Put your guess in here" />
        <button>Guess</button>
     </form>
   </body>
