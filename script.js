@@ -19,6 +19,7 @@ then I want computer to tell me I got name correct and its equal to name I type
 
 */
 
+
 //variables
 let mainLink = `https://pokeapi.co/api/v2/pokemon?limit=151`
 let totalPk
@@ -37,7 +38,7 @@ loadFirst();
 
 function loadFirst(){
 $.ajax(mainLink).then(function (data){
-    console.log(data)
+    
      totalPk = data
      choosePokemon();
 });
@@ -53,14 +54,14 @@ function generateIndex(){
  function choosePokemon(){
     // select the index to get access for the pokemon
     $.ajax(totalPk.results[generateIndex()]).then(function (detailedData){
-        console.log(detailedData)
+        
         exData = detailedData
     });
 
  }
  
  function render (pokeData){
-    console.log(pokeData)
+    
     $(`div`).html(`<img src = "${exData.sprites.other["official-artwork"].front_default}">`)
  }
 
@@ -70,10 +71,12 @@ function generateIndex(){
      if($input.val() == exData.name){
         console.log (`true`)
         alert(`You got it!`)
+        location.reload();
     }
     else{ ($input.val() != exData.name) 
-        alert(`Nah, try again homie`)
+        alert(`Better luck next time`)
          console.log(`false`)
+         location.reload();
      }
  })
 
@@ -81,6 +84,7 @@ function generateIndex(){
      render()
  })
 
+ //when correct the page reloads
 
 //  official-artwork
 //  name

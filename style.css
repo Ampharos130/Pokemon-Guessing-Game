@@ -3,7 +3,7 @@ body{
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    background-color: rgb(90, 201, 182);
+    background-color: rgb(255, 2, 2);
     font-family: 'Pokemon Solid', sans-serif;
 }
 
@@ -12,6 +12,8 @@ div{
     justify-content: center;
     flex-direction: column;
     align-items: center;
+    background-color: snow;
+    
 }
 
 form{
