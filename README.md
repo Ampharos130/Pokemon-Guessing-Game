@@ -1,10 +1,10 @@
 # Pokemon guessing game
 > A game that displays a random pokemon on screen where the user types the correct name associated with the image.
 ## Tools used
->*HTML 
->*CSS 
->*Javascript 
->*Pokemon-api
+*HTML 
+*CSS 
+*Javascript 
+*Pokemon-api
 ## Screen shot
 ![Imgur](https://i.imgur.com/DY15DbY.png)
 ### Deployed Link to try it out
