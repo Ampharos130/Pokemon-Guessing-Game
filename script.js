@@ -23,13 +23,13 @@ then I want computer to tell me I got name correct and its equal to name I type
 //variables
 let mainLink = `https://pokeapi.co/api/v2/pokemon?limit=151`
 let totalPk
-let exData 
+let detailData  
 //element references
 let $button = $(`button`);
 let $input = $(`input`);
 let $img = $(`.guessImg`);
 
-// event listeners
+// initial statement
 loadFirst();
 
 
@@ -55,35 +55,34 @@ function generateIndex(){
     // select the index to get access for the pokemon
     $.ajax(totalPk.results[generateIndex()]).then(function (detailedData){
         
-        exData = detailedData
+        detailData = detailedData
     });
 
  }
  
  function render (pokeData){
     
-    $(`div`).html(`<img src = "${exData.sprites.other["official-artwork"].front_default}">`)
+    $(`div`).html(`<img src = "${detailData.sprites.other["official-artwork"].front_default}">`)
  }
 
- $button.on(`click`, function compare(evt){
+ $button.on(`click`, function(evt){
      evt.preventDefault();
      
-     if($input.val() == exData.name){
+     if($input.val().toLowerCase() == detailData.name.toLowerCase()){
         console.log (`true`)
         alert(`You got it!`)
         location.reload();
     }
-    else{ ($input.val() != exData.name) 
+    else{ ($input.val() != detailData.name) 
         alert(`Better luck next time`)
          console.log(`false`)
          location.reload();
      }
  })
 
- $img.on(`click`, function startGame(){
+ $img.on(`click`, function(){
      render()
  })
-
  //when correct the page reloads
 
 //  official-artwork
