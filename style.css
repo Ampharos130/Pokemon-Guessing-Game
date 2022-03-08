@@ -4,7 +4,12 @@ body{
     flex-direction: column;
     align-items: center;
     background-color: rgb(255, 2, 2);
-    font-family: 'Pokemon Solid', sans-serif;
+    font-family: 'Press Start 2P', cursive;
+}
+
+h1{
+    padding-top: 5rem;
+    padding-bottom: 5rem;
 }
 
 div{
@@ -17,9 +22,11 @@ div{
 }
 
 form{
-    width: 20%;
-    margin: auto;
+    padding-top: 5rem;
+display: flex;
+justify-content: center;
 }
+
 
 
 .inputStuff{
@@ -37,4 +44,42 @@ form{
 .guessImg{
     max-width: 70%;
     margin: 50px 0px;
+}
+
+
+
+.dpad{
+    position: absolute;
+    right: 80%;
+    top: 40%;
+}
+
+.circle1{
+    max-width: 150px;
+    position: absolute;
+    left: 85%;
+    top: 40%;
+}
+
+.circle2{
+    max-width: 100px;
+    position: absolute;
+    left: 75%;
+    top: 50%;
+}
+
+.abtn{
+    color: white;
+    position: absolute;
+    font-size: 50px;
+    left: 87.2%;
+    top: 41%;
+}
+
+.bbtn{
+    color: white;
+    position: absolute;
+    font-size: 30px;
+    left: 76.5%;
+    top: 51%;
 }

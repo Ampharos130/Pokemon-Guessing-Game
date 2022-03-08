@@ -22,7 +22,7 @@ then I want computer to tell me I got name correct and its equal to name I type
 
 //variables
 let mainLink = `https://pokeapi.co/api/v2/pokemon?limit=151`
-let totalPk
+let totalPk 
 let detailData  
 
 //element references
@@ -61,7 +61,7 @@ function generateIndex(){
  // renders api's official artwork img onto webpage
  function render (pokeData){
     
-    $(`div`).html(`<img src = "${detailData.sprites.other["official-artwork"].front_default}">`)
+    $(`.imgContainer`).html(`<img src = "${detailData.sprites.other["official-artwork"].front_default}">`)
  }
 
  // event listener
@@ -86,4 +86,3 @@ function generateIndex(){
      render()
  })
  //when correct the page reloads
-
